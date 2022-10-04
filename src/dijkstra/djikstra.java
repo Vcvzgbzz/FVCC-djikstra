@@ -1,4 +1,6 @@
-//DSSP22_BreathFirst
+//Breadth First Algorithm
+// Jadeyn Fincher
+//
 
 package dijkstra;
 import java.util.Scanner;
@@ -49,6 +51,8 @@ class Dijkstra {
         System.out.println("\n----------\n");
     }
 
+
+    //Graph = 2d array that you are passing in and s represents what you are searching for
     void dijkstra(int graph[][], int s) {
         int distance[] = new int[totalVertex];
         Boolean spSet[] = new Boolean[totalVertex];
@@ -91,6 +95,29 @@ public class djikstra {
         //arr[x][y] -1 means there is no edge that connects the noex x and y directly
         // first box node position
         // weights from that node
+        // First array to test
+        int grp[][] = new int[][]{
+                {-1,1,-1,-1,-1,8}, //node 0
+                {1,-1,1,8,-1,-1},
+                {-1,1,-1,7,-1,1},
+                {-1,8,7,-1,1,-1},
+                {-1,-1,-1,1,-1,1},
+                {8,-1,1,-1,1,-1} //node 5
+        };
+
+        System.out.println("Below shows the array of values representing the weight of travelling from a node the the other nodes");
+            System.out.print("From NODE:\t0\t1\t2\t3\t4\t5");
+        System.out.println("\nTO(Below)-------------------------------");
+
+        for(int i=0;i<6;i++){
+            System.out.print("NODE "+i+": ");
+            for(int k=0;k<6;k++){
+                System.out.print("\t"+grp[i][k]);
+
+            }
+            System.out.println();
+        }
+
         try{
             System.out.println("What node would you like to start from? (0-5) FIRST DIAGRAM");
             node = myScan.nextInt();
@@ -101,29 +128,11 @@ public class djikstra {
 
 
 
-        int grp[][] = new int[][]{
-                {-1,1,-1,-1,-1,8}, //node 0
-                {1,-1,1,8,-1,-1},
-                {-1,1,-1,7,-1,1},
-                {-1,8,7,-1,1,-1},
-                {-1,-1,-1,1,-1,1},
-                {8,-1,1,-1,1,-1} //node 5
-        };
 
         Dijkstra obj = new Dijkstra();
 
         obj.dijkstra(grp, node);
 
-
-
-        try{
-
-            System.out.println("What node would you like to start from? (0-6) SECOND DIAGRAM");
-            node = myScan.nextInt();
-        } catch (Exception e) {
-
-            System.out.println(e.getMessage());
-        }
         int grp2[][] = new int[][]{
                 {-1,6,-1,-1,-1,8,2}, //node 0
                 {6,-1,1,-1,-1,-1,3},
@@ -135,6 +144,28 @@ public class djikstra {
 
 
         };
+        System.out.println("Below shows the array of values representing the weight of travelling from a node the the other nodes");
+        System.out.print("From NODE:\t0\t1\t2\t3\t4\t5\t6");
+        System.out.println("\nTO(Below)-------------------------------");
+
+        for(int i=0;i<7;i++){
+            System.out.print("NODE "+i+": ");
+            for(int k=0;k<7;k++){
+                System.out.print("\t"+grp2[i][k]);
+
+            }
+            System.out.println();
+        }
+        try{
+
+            System.out.println("What node would you like to start from? (0-6) SECOND DIAGRAM");
+            node = myScan.nextInt();
+        } catch (Exception e) {
+
+            System.out.println(e.getMessage());
+        }
+        // Second array to test
+
 
         Dijkstra obj2 = new Dijkstra();
         obj2.setTotalVertex(7);
