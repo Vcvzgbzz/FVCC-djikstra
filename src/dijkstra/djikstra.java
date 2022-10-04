@@ -109,9 +109,9 @@ public class djikstra {
             System.out.print("From NODE:\t0\t1\t2\t3\t4\t5");
         System.out.println("\nTO(Below)-------------------------------");
 
-        for(int i=0;i<6;i++){
+        for(int i=0;i<grp.length;i++){
             System.out.print("NODE "+i+": ");
-            for(int k=0;k<6;k++){
+            for(int k=0;k<grp.length;k++){
                 System.out.print("\t"+grp[i][k]);
 
             }
@@ -148,9 +148,9 @@ public class djikstra {
         System.out.print("From NODE:\t0\t1\t2\t3\t4\t5\t6");
         System.out.println("\nTO(Below)-------------------------------");
 
-        for(int i=0;i<7;i++){
+        for(int i=0;i<grp2.length;i++){
             System.out.print("NODE "+i+": ");
-            for(int k=0;k<7;k++){
+            for(int k=0;k<grp2.length;k++){
                 System.out.print("\t"+grp2[i][k]);
 
             }
@@ -168,11 +168,8 @@ public class djikstra {
 
 
         Dijkstra obj2 = new Dijkstra();
-        obj2.setTotalVertex(7);
+        obj2.setTotalVertex(grp2.length);
         obj2.dijkstra(grp2, node);
     }
 
 }
-
-
-
